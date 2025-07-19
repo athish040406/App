@@ -1,38 +1,230 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* Reset & Base */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #2c3e50, #4ca1af);
   min-height: 100vh;
+}
+
+/* Shared Container */
+.container {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  min-height: 100vh;
+}
+
+/* Form Box */
+.form-box {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  width: 350px;
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+}
+
+.form-box h2 {
+  margin-bottom: 20px;
+  color: #34495e;
+}
+
+.form-box input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: 0.3s;
+}
+
+.form-box input:focus {
+  border: 1px solid #3498db;
+  outline: none;
+}
+
+.form-box button {
+  width: 100%;
+  padding: 10px;
+  background: #2980b9;
   color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
+.form-box button:hover {
+  background: #1abc9c;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.link {
+  color: #2980b9;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* Home Box */
+.home-box {
+  background: white;
+  padding: 80px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 0.5s ease;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.home-btn {
+  padding: 12px 34px;
+  margin: 20px;
+  background: #2980b9;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.home-btn:hover {
+  background: #1abc9c;
+  transform: scale(1.05);
+}
+
+/* Manager Styles */
+.manager-advanced-box {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  width: 450px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 0.5s ease;
+}
+
+.form-inline-advanced input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.form-inline-advanced button {
+  width: 100%;
+  padding: 10px;
+  background: #2980b9;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.form-inline-advanced button:hover {
+  background: #1abc9c;
+}
+
+.strength {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.strength.weak {
+  color: red;
+}
+
+.strength.medium {
+  color: orange;
+}
+
+.strength.strong {
+  color: green;
+}
+
+.password-card-advanced {
+  background: #f2f2f2;
+  color: #333;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.password-card-advanced button {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.password-card-advanced button:hover {
+  background: #c0392b;
+}
+
+/* Generator Styles */
+.generator-box {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.5s ease;
+}
+
+.generator-box input {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.generator-box button {
+  padding: 10px 20px;
+  background: #2980b9;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.generator-box button:hover {
+  background: #1abc9c;
+}
+
+.generated-password {
+  background: #f2f2f2;
+  color: #333;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
